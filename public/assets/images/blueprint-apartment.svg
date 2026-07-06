@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-label="План переустройства трехкомнатной квартиры · от черновой отделки к готовому объекту">
+      <defs><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#87888C" stroke-opacity=".26" stroke-width="1"/></pattern><filter id="glow"><feGaussianBlur stdDeviation="4"/></filter></defs>
+      <rect width="1200" height="760" fill="#F7F3EA"/><rect width="1200" height="760" fill="url(#grid)"/>
+      <g fill="none" stroke="#FF6500" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="80" y="70" width="1040" height="620" rx="12"/>
+        <path d="M320 70v300h270V70M590 370h310V70M900 70v330h220M80 390h250V690M330 370v320h360M690 370h430V690"/>
+        <path d="M145 390v150h185M590 70v180h310M830 370v140h290M330 530h140v160M470 530h220"/>
+        <path d="M90 110h90M90 145h50M990 100h100M990 130h60M104 630h150M742 640h200" stroke-dasharray="10 10"/>
+        <g fill="#F36A10" stroke="none"><circle cx="320" cy="370" r="8"/><circle cx="590" cy="370" r="8"/><circle cx="690" cy="370" r="8"/><circle cx="900" cy="370" r="8"/></g>
+        <g font-size="26" font-weight="700"><text x="160" y="245">СПАЛЬНЯ 01</text><text x="400" y="245">СПАЛЬНЯ 02</text><text x="705" y="210">ГОСТИНАЯ</text><text x="950" y="240">КУХНЯ</text><text x="145" y="555">САНУЗЕЛ</text><text x="455" y="485">ХОЛЛ</text><text x="760" y="560">МАСТЕР-СПАЛЬНЯ</text></g>
+        <g font-size="17" fill="#87888C"><text x="162" y="275">12,4 м²</text><text x="402" y="275">10,8 м²</text><text x="706" y="240">21,6 м²</text><text x="952" y="270">9,2 м²</text><text x="147" y="585">4,8 м²</text><text x="458" y="515">11,2 м²</text><text x="763" y="590">15,6 м²</text></g></g>
+      <g fill="#FF6500" font-family="Arial, sans-serif"></g>
+      <text x="80" y="42" fill="#F36A10" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="3">НОВЫЙ ДОМ · ТЕХНИЧЕСКАЯ СХЕМА</text>
+      <text x="1120" y="42" fill="#87888C" text-anchor="end" font-family="Arial, sans-serif" font-size="14">ПЛАН / 01</text>
+      <text x="80" y="730" fill="#87888C" font-family="Arial, sans-serif" font-size="14">План переустройства трехкомнатной квартиры · от черновой отделки к готовому объекту</text>
+      <circle cx="1135" cy="705" r="18" fill="#F36A10" filter="url(#glow)" opacity=".75"/>
+    </svg>

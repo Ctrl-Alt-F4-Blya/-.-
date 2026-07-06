@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 920" role="img" aria-label="Загрузите фото основателя">
+ <rect width="740" height="920" fill="#15262D"/>
+ <path d="M0 760C200 690 350 860 740 710V920H0Z" fill="#1E3943"/>
+ <g fill="none" stroke="#F36A10" stroke-width="3" stroke-dasharray="12 12" opacity=".9"><rect x="74" y="72" width="592" height="664" rx="30"/></g>
+ <circle cx="370" cy="322" r="92" fill="none" stroke="#F36A10" stroke-width="3"/>
+ <path d="M226 596c20-115 88-175 144-175s124 60 144 175" fill="none" stroke="#F36A10" stroke-width="3" stroke-linecap="round"/>
+ <text x="370" y="805" text-anchor="middle" fill="#F8F4EC" font-family="Arial, sans-serif" font-size="29" font-weight="700">Загрузите фото основателя</text>
+ <text x="370" y="842" text-anchor="middle" fill="#B7C4C8" font-family="Arial, sans-serif" font-size="17">assets/uploads/founder/founder-photo.jpg</text>
+</svg>
