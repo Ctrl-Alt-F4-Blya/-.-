@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-label="Инвестиционная схема · объект, подготовка и управляемый доход">
+      <defs><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#87888C" stroke-opacity=".26" stroke-width="1"/></pattern><filter id="glow"><feGaussianBlur stdDeviation="4"/></filter></defs>
+      <rect width="1200" height="760" fill="#F7F3EA"/><rect width="1200" height="760" fill="url(#grid)"/>
+      <g fill="none" stroke="#FF6500" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="120" y="120" width="960" height="500" rx="14"/>
+        <path d="M120 370h960M360 120v500M640 120v500M870 120v500"/>
+        <path d="M170 240h140M410 240h160M690 240h130M920 240h110M170 500h140M410 500h160M690 500h130M920 500h110" stroke-dasharray="10 10"/>
+        <g fill="#F36A10" stroke="none"><circle cx="360" cy="370" r="8"/><circle cx="640" cy="370" r="8"/><circle cx="870" cy="370" r="8"/></g>
+        <g font-size="26" font-weight="700"><text x="178" y="350">ВХОД</text><text x="420" y="350">ПЛАНИРОВКА</text><text x="690" y="350">ЗАПУСК</text><text x="920" y="350">ДОХОД</text></g>
+        <g font-size="17" fill="#87888C"><text x="178" y="390">сценарий</text><text x="420" y="390">объект</text><text x="690" y="390">подготовка</text><text x="920" y="390">управление</text></g></g>
+      <g fill="#FF6500" font-family="Arial, sans-serif"></g>
+      <text x="80" y="42" fill="#F36A10" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="3">НОВЫЙ ДОМ · ТЕХНИЧЕСКАЯ СХЕМА</text>
+      <text x="1120" y="42" fill="#87888C" text-anchor="end" font-family="Arial, sans-serif" font-size="14">ПЛАН / 01</text>
+      <text x="80" y="730" fill="#87888C" font-family="Arial, sans-serif" font-size="14">Инвестиционная схема · объект, подготовка и управляемый доход</text>
+      <circle cx="1135" cy="705" r="18" fill="#F36A10" filter="url(#glow)" opacity=".75"/>
+    </svg>
