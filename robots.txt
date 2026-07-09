@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://newdom.ru/sitemap.xml
+Disallow: /404.html

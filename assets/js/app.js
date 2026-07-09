@@ -10,18 +10,56 @@
     window.addEventListener('scroll', syncHeader, { passive: true });
   }
 
+  // Mobile navigation — resilient hamburger handler.
+  // Works both on the Node server and in a static/mobile preview,
+  // closes on outside tap/Escape, and keeps body/header state in sync.
   const navToggle = $('[data-nav-toggle]');
   const nav = $('[data-nav]');
+  const closeNav = () => {
+    if (!nav || !navToggle) return;
+    nav.classList.remove('is-open');
+    navToggle.classList.remove('is-active');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Открыть меню');
+    header?.classList.remove('nav-is-open');
+    document.body.classList.remove('nav-open');
+  };
+  const openNav = () => {
+    if (!nav || !navToggle) return;
+    nav.classList.add('is-open');
+    navToggle.classList.add('is-active');
+    navToggle.setAttribute('aria-expanded', 'true');
+    navToggle.setAttribute('aria-label', 'Закрыть меню');
+    header?.classList.add('nav-is-open');
+    document.body.classList.add('nav-open');
+  };
+  const toggleNav = () => (nav?.classList.contains('is-open') ? closeNav() : openNav());
+
   if (navToggle && nav) {
-    navToggle.addEventListener('click', () => {
-      const opened = !nav.classList.contains('is-open');
-      nav.classList.toggle('is-open', opened);
-      navToggle.setAttribute('aria-expanded', String(opened));
+    navToggle.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      toggleNav();
     });
-    $$('a', nav).forEach((link) => link.addEventListener('click', () => {
-      nav.classList.remove('is-open');
-      navToggle.setAttribute('aria-expanded', 'false');
-    }));
+
+    nav.addEventListener('click', (event) => {
+      const target = event.target.closest('a, button');
+      if (!target) return;
+      if (target.matches('.js-open-form')) {
+        window.setTimeout(closeNav, 0);
+        return;
+      }
+      if (target.matches('a')) closeNav();
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!nav.classList.contains('is-open')) return;
+      if (event.target.closest('[data-nav], [data-nav-toggle]')) return;
+      closeNav();
+    });
+
+    window.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeNav(); });
+    window.addEventListener('resize', () => { if (window.innerWidth > 1180) closeNav(); }, { passive: true });
   }
 
   const revealItems = $$('[data-reveal]');
@@ -98,7 +136,9 @@
         if (!response.ok) throw new Error(data.message || 'Не удалось отправить заявку.');
         form.reset();
         setStatus(form, data.message || 'Заявка отправлена. Команда свяжется с вами в согласованное время.', true);
-        if (modal?.contains(form)) setTimeout(closeModal, 1900);
+        form.classList.add('is-sent');
+        window.dispatchEvent(new CustomEvent('lead:sent', { detail: { source: payload.source, page: payload.page } }));
+        if (modal?.contains(form)) setTimeout(closeModal, 2300);
       } catch (error) {
         setStatus(form, error.message || 'Ошибка отправки. Пожалуйста, попробуйте еще раз.');
       } finally {
@@ -135,6 +175,14 @@
       apply('address', config.address);
       $$('[data-contact-link="phone"]').forEach((node) => { if (config.phoneHref) node.href = `tel:${config.phoneHref}`; });
       $$('[data-contact-link="email"]').forEach((node) => { if (config.email) node.href = `mailto:${config.email}`; });
+      $$('[data-contact-link="telegram"]').forEach((node) => {
+        if (config.telegram) { node.href = config.telegram; node.hidden = false; }
+        else node.hidden = true;
+      });
+      $$('[data-contact-link="whatsapp"]').forEach((node) => {
+        if (config.whatsapp) { node.href = config.whatsapp; node.hidden = false; }
+        else node.hidden = true;
+      });
     } catch (_) { /* static preview works with fallback text */ }
   };
   hydrateContacts();
@@ -335,4 +383,16 @@
       }
     });
   }
+})();
+
+
+(() => {
+  'use strict';
+  const today = new Date();
+  const yyyy = today.getFullYear();
+  const mm = String(today.getMonth() + 1).padStart(2, '0');
+  const dd = String(today.getDate()).padStart(2, '0');
+  document.querySelectorAll('input[type="date"][name="preferredDate"]').forEach((input) => {
+    if (!input.min) input.min = `${yyyy}-${mm}-${dd}`;
+  });
 })();
